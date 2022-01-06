@@ -11,3 +11,16 @@ with open(file_to_load) as election_data:
 
     # Perform Analysis
     print(election_data)
+
+#Module 3.4.2 exercise 
+import csv
+import os
+
+#Assign variable for file election_results
+file_to_load = os.path.join("Resources","election_results.csv")
+
+#Open the election results and read the file.
+with open(file_to_load) as election_data:
+
+    #print the file object
+    print(election_data)
