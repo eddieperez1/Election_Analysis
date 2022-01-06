@@ -12,23 +12,28 @@ with open(file_to_load) as election_data:
     # Perform Analysis
     print(election_data)
 
-#Module 3.4.2 exercise 
+#import csv and os libraries
 import csv
 import os
 
 #Assign variable for file election_results
 file_to_load = os.path.join("Resources","election_results.csv")
 
-#Open the election results and read the file.
-with open(file_to_load) as election_data:
-
-    #print the file object
-    print(election_data)
-
 #Create filename variable to save election results analysis
 file_to_save = os.path.join("analysis","election_analysis.txt")
 
-#Using open() function with "w" mode to write to file
+#Open the election results and read the file_to_load.
+with open(file_to_load) as election_data:
+
+    #Read and analyze the data here
+    #Read election_data
+    file_reader = csv.reader(election_data)
+
+    # Read and print the header row.
+    headers = next(file_reader)
+    print(headers)
+
+#Using open() function with "w" mode to write to file_to_save
 with open(file_to_save,"w") as txt_file:
 
     #Write "Hello World" in txt file
