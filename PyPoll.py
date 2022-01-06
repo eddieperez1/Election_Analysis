@@ -24,3 +24,14 @@ with open(file_to_load) as election_data:
 
     #print the file object
     print(election_data)
+
+#Create filename variable to save election results analysis
+file_to_save = os.path.join("analysis","election_analysis.txt")
+
+#Using open() function with "w" mode to write to file
+with open(file_to_save,"w") as txt_file:
+
+    #Write "Hello World" in txt file
+    txt_file.write("Counties in the Election\n")
+    txt_file.write("-------------------------\n")
+    txt_file.write("Arapahoe\nDenver\nJefferson")
