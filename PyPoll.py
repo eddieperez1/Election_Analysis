@@ -18,6 +18,8 @@ file_to_save = os.path.join("analysis","election_analysis.txt")
 # 1. Initialize a total_votes counter
 total_votes = 0
 
+#Initialize candidate name list
+candidate_options = []
 #Open the election results and read the file_to_load.
 with open(file_to_load) as election_data:
 
@@ -33,8 +35,18 @@ with open(file_to_load) as election_data:
         # Add to the total vote count
         total_votes += 1
 
+        #Find candidate name
+        candidate_name = row[2]
+
+        #If candidate name is not in candidate options...
+        if candidate_name not in candidate_options:
+            #Then Add candidate name to candidate options
+            candidate_options.append(candidate_name)
+
 # 3. Print the total votes
 print(f'Total Votes: {total_votes:,}')
+# Print candidate options
+print(f'Candidates: {candidate_options}')
     
 
 #Using open() function with "w" mode to write to file_to_save
