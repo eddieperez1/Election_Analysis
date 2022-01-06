@@ -5,13 +5,6 @@
 # 4. The total number of votes each candidate won
 # 5. The winner of the election based on popular vote.
 
-# Open election_result.csv
-file_to_load = 'Resources\election_results.csv'
-with open(file_to_load) as election_data:
-
-    # Perform Analysis
-    print(election_data)
-
 #import csv and os libraries
 import csv
 import os
@@ -22,6 +15,9 @@ file_to_load = os.path.join("Resources","election_results.csv")
 #Create filename variable to save election results analysis
 file_to_save = os.path.join("analysis","election_analysis.txt")
 
+# 1. Initialize a total_votes counter
+total_votes = 0
+
 #Open the election results and read the file_to_load.
 with open(file_to_load) as election_data:
 
@@ -31,7 +27,15 @@ with open(file_to_load) as election_data:
 
     # Read and print the header row.
     headers = next(file_reader)
-    print(headers)
+    
+    #Find total votes
+    for row in file_reader:
+        # Add to the total vote count
+        total_votes += 1
+
+# 3. Print the total votes
+print(f'Total Votes: {total_votes:,}')
+    
 
 #Using open() function with "w" mode to write to file_to_save
 with open(file_to_save,"w") as txt_file:
