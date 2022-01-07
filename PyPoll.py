@@ -99,10 +99,22 @@ for candidate_name in candidate_votes:
 #print winning candidate name, votes and percentage of votes
 print(winning_candidate_summary)
 
-#Using open() function with "w" mode to write to file_to_save
-with open(file_to_save,"w") as txt_file:
+# Save the results to our text file.
+with open(file_to_save, "w") as txt_file:
+    # Print the final vote count to the terminal.
+    election_results = (
+        f"\nElection Results\n"
+        f"-------------------------\n"
+        f"Total Votes: {total_votes:,}\n"
+        f"-------------------------\n")
+    print(election_results, end="")
+    # Save the final vote count to the text file.
+    txt_file.write(election_results)
 
-    #Write "Hello World" in txt file
-    txt_file.write("Counties in the Election\n")
-    txt_file.write("-------------------------\n")
-    txt_file.write("Arapahoe\nDenver\nJefferson")
+#Using open() function with "w" mode to write to file_to_save
+# with open(file_to_save,"w") as txt_file:
+
+#     #Write "Hello World" in txt file
+#     txt_file.write("Counties in the Election\n")
+#     txt_file.write("-------------------------\n")
+#     txt_file.write("Arapahoe\nDenver\nJefferson")
