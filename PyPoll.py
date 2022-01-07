@@ -20,6 +20,9 @@ total_votes = 0
 
 #Initialize candidate name list
 candidate_options = []
+
+#Initialize candidate votes dict
+candidate_votes = {}
 #Open the election results and read the file_to_load.
 with open(file_to_load) as election_data:
 
@@ -43,11 +46,16 @@ with open(file_to_load) as election_data:
             #Then Add candidate name to candidate options
             candidate_options.append(candidate_name)
 
+            # Initialize candidate votes with candidate names as keys and number of votes as value
+            candidate_votes[candidate_name] = 0
+        #Add vote to candidate's count
+        candidate_votes[candidate_name] += 1    
 # 3. Print the total votes
 print(f'Total Votes: {total_votes:,}')
 # Print candidate options
 print(f'Candidates: {candidate_options}')
-    
+# Print candidate votes 
+print(f'Candidate and number of votes: {candidate_votes}') 
 
 #Using open() function with "w" mode to write to file_to_save
 with open(file_to_save,"w") as txt_file:
