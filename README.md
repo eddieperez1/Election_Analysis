@@ -1,7 +1,7 @@
 # Election_Analysis
 ## Overview of Election Analysis
 
-Seth and Tom receive the election audit for candidates but they also want the election audit for county voter turnout. The purpose of this challenge is to code in python the election results for county voter turnout. During the modules, the code for election results for candidates was completed. The election audit explores the voting results for candidates and counties and analyzes which cnadidate won.
+Seth and Tom receive the election audit for candidates but they also want the election audit for county voter turnout. The purpose of this challenge is to code in python the election results for county voter turnout. During the modules, the code for election results for candidates was completed. The election audit explores the voting results for candidates and counties and analyzes which candidate won.
 
 ## Election Audit Results
 The results of the election audit were written to election_analysis.txt.
